@@ -1,10 +1,21 @@
 <!doctype html>
 <html>
 <head>
-    <title></title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😭</text></svg>">
+
+<link rel="stylesheet" href="style.css">
+    <title>Don't cry</title>
 </head>
 <body>
+    <h1>Try not to cry</h1>
+    <div id="main">
+         <div v-for="image in images" class="card">
+             <img :src="image.url">
+             <p>{{ image.title }}</p>
+         </div> 
+    </div>
     <script src="/js/vue.js"></script>
     <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

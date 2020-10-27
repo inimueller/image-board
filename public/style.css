@@ -1,0 +1,22 @@
+body {
+    background-color: whitesmoke;
+    color: rosybrown;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    margin-bottom: 40px;
+    width: 400px;
+    height: 300px;
+}
+
+img {
+    width: 400px;
+    height: 300px;
+}
