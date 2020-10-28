@@ -3,11 +3,12 @@ body {
     color: rosybrown;
 }
 
-#main {
+#imgcontainer {
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    margin-top: 30px;
 }
 
 .card {

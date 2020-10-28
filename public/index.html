@@ -20,11 +20,12 @@
          <!-- I have to tell the button NOT tu reload the page (which is its usual way) -->
     </form>
 
-
+<div id="imgcontainer">
          <div v-for="image in images" class="card">
              <img :src="image.url">
              <p>{{ image.title }}</p>
          </div> 
+  </div>
     </div>
     <script src="/js/vue.js"></script>
     <script src="/js/axios.min.js"></script>

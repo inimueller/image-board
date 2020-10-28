@@ -28,10 +28,13 @@ new Vue({
             formData.append("username", this.username);
             formData.append("file", this.file);
 
+            let self = this;
+
             axios
                 .post("/upload", formData)
                 .then(function (res) {
-                    console.log("res from POST /upload", res);
+                    console.log("res from POST /upload", res.data.rows[0]);
+                    self.images.unshift(res.data.rows[0]);
                 })
                 .catch(function (err) {
                     console.log("err in POST /upload", err);
