@@ -1,4 +1,25 @@
 // this is us telling this block of code: you are in charge of anything living inside the main div
+Vue.component("my-modal", {
+    props: ["imageId"],
+    template: "#modal",
+    data: function () {
+        return {
+            image: "",
+        };
+    },
+    mounted: function () {
+        let self = this;
+        axios
+            .get(`/image/${this.imageId}`)
+            .then(function (response) {
+                self.image = response.data[0];
+            })
+            .catch(function (err) {
+                console.log("error in GET /modalImage", err); // create this function (dbquery)
+            });
+    },
+});
+
 new Vue({
     el: "#main",
     data: {

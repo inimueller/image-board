@@ -18,7 +18,7 @@
          <input v-model="username" type="text" name="username "placeholder="username">
          <input @change="handleChange" type="file" name="file" accept="image/*" class="custom-file-input">
          <button @click="handleClick">Submit</button>
-         <!-- I have to tell the button NOT tu reload the page (which is its usual way) -->
+         <!-- I have to tell the button NOT tu reload the page (which is its usual behavior) -->
     </form>
 </div>
 
@@ -29,6 +29,25 @@
             </div> 
   </div>
     </div>
+
+
+ <!-- Here goes the vue component  -->
+        <my-modal 
+            v-if="imageId" 
+            :image-id="imageId"  
+            @close='closeMePlease'>
+        </my-modal>
+
+
+<!-- Here goes the script for the vue component -->
+         <div id="modal-overlay">
+            <div id="modal">
+                <div id="close-modal">
+                    <p id="close-modal">x</p>
+                </div> 
+          </div>
+
+
     <script src="/js/vue.js"></script>
     <script src="/js/axios.min.js"></script>
     <script src="/js/script.js"></script>

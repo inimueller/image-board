@@ -5,7 +5,10 @@ var db = spicedPg(
 );
 
 exports.getImages = () => {
-    return db.query(`SELECT * FROM images`);
+    return db.query(
+        `SELECT * FROM images
+        ORDER BY id DESC`
+    );
 };
 
 exports.addImages = (url, username, title, description) => {
