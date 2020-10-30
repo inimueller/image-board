@@ -45,6 +45,9 @@
          
     <div id="modal-overlay">
             <div id="my-modal">
+                <div id="close-modal">
+                    <p @click="closeMyModal"  id="close-modal">x</p>
+                </div>  
                     <div id="modal-content"> 
                          <div> <img id="modal-image" :src="image.url"></div>
                          <div>
@@ -53,9 +56,7 @@
                             </p>
                          </div>   
                     </div>
-                <div id="close-modal">
-                    <p @click="closeMyModal"  id="close-modal">x</p>
-                </div>    
+                  
             </div> 
     </div>
 </script>
