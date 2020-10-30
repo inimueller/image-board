@@ -24,29 +24,33 @@
 
 <div id="imgcontainer">
          <div v-for="image in images" class="card">
-             <img :src="image.url">
+             <img :src="image.url" @click="openModal(image.id)">
+             <!-- (image.id) -->
              <p>{{ image.title }}</p>
             </div> 
   </div>
-    </div>
+  
+  <!-- Here goes the vue component  -->
+    <my-component
+        v-if="imageId" 
+        :image-id="imageId"  
+        @close='closeMePlease'>
+    </my-component>
 
-
- <!-- Here goes the vue component  -->
-        <my-modal 
-            v-if="imageId" 
-            :image-id="imageId"  
-            @close='closeMePlease'>
-        </my-modal>
+</div>
 
 
 <!-- Here goes the script for the vue component -->
-         <div id="modal-overlay">
-            <div id="modal">
+<script id="myModal" type="text/x-template">
+         
+    <div id="modal-overlay">
+            <div id="my-modal">
                 <div id="close-modal">
-                    <p id="close-modal">x</p>
-                </div> 
-          </div>
-
+                    <p @click="closeMyModal"  id="close-modal">x</p>
+                </div>    
+            </div> 
+    </div>
+</script>
 
     <script src="/js/vue.js"></script>
     <script src="/js/axios.min.js"></script>

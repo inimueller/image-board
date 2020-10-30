@@ -101,7 +101,7 @@ input {
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    visibility: hidden;
+    /* visibility: hidden; */
     z-index: 1;
     display: flex;
     flex-direction: row;
@@ -109,7 +109,7 @@ input {
     align-items: center;
 }
 
-#modal {
+#my-modal {
     width: 500px;
     height: 700px;
     border-radius: 10px;
@@ -120,4 +120,5 @@ input {
     margin-right: 10px;
     float: right;
     font-family: sans-serif;
+    cursor: pointer;
 }

@@ -1,21 +1,33 @@
 // this is us telling this block of code: you are in charge of anything living inside the main div
-Vue.component("my-modal", {
+Vue.component("my-component", {
     props: ["imageId"],
-    template: "#modal",
+
+    template: "#myModal",
     data: function () {
         return {
             image: "",
+            comments: [],
+            comment: "",
+            username: "",
         };
     },
+
+    methods: {
+        closeMyModal: function () {
+            console.log("it closes");
+            this.$emit("close");
+        },
+    },
+
     mounted: function () {
         let self = this;
         axios
-            .get(`/image/${this.imageId}`)
+            .get("/imageId/" + this.imageId)
             .then(function (response) {
                 self.image = response.data[0];
             })
             .catch(function (err) {
-                console.log("error in GET /modalImage", err); // create this function (dbquery)
+                console.log("error with axios", err);
             });
     },
 });
@@ -23,8 +35,8 @@ Vue.component("my-modal", {
 new Vue({
     el: "#main",
     data: {
+        imageId: null,
         images: [],
-        //data properties self will store values of imput fields
         title: " ",
         description: " ",
         username: " ",
@@ -37,7 +49,6 @@ new Vue({
         });
     },
 
-    // ALL the functions self I create are defined in METHODS!
     methods: {
         handleClick: function (e) {
             e.preventDefault();
@@ -66,6 +77,17 @@ new Vue({
             console.log("handleChange is running!");
             console.log("file: ", e.target.files[0]);
             this.file = e.target.files[0];
+        },
+
+        closeMePlease: function () {
+            console.log("closeMePlease is working");
+            this.imageId = null;
+        },
+
+        openModal: function (id) {
+            console.log("openModal is running!!");
+            this.imageId = id;
+            console.log("id: ", id);
         },
     },
 });
