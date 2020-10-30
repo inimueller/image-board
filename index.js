@@ -40,6 +40,18 @@ app.get("/images", (req, res) => {
     });
 });
 
+app.get("/images/:id", (req, res) => {
+    const { id } = req.params;
+    db.getModalImage(id)
+        .then(({ rows }) => {
+            res.json(rows[0]);
+            // console.log("rows is in getImagebyId: ", rows);
+        })
+        .catch((err) => {
+            console.log("error in GET /image by id", err);
+        });
+});
+
 app.post("/upload", uploader.single("file"), s3.upload, (req, res) => {
     // when I make a post request, before it runs the code, I want it to upload to our hard drive.
     // hence why we need the uploader thing from multer.

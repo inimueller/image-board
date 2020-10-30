@@ -22,9 +22,9 @@ Vue.component("my-component", {
     mounted: function () {
         let self = this;
         axios
-            .get("/imageId/" + this.imageId)
+            .get("/images/" + this.imageId)
             .then(function (response) {
-                self.image = response.data[0];
+                self.image = response.data;
             })
             .catch(function (err) {
                 console.log("error with axios", err);

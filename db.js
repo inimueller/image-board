@@ -21,6 +21,6 @@ exports.addImages = (url, username, title, description) => {
     );
 };
 
-// module.exports.getModalImage = (id) => {
-//     return db.query(`SELECT * FROM images WHERE id=$1`, [id]);
-// };
+module.exports.getModalImage = (id) => {
+    return db.query(`SELECT * FROM images WHERE id=$1`, [id]);
+};
