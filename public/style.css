@@ -13,6 +13,13 @@ h1 {
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+h5 {
+    margin-top: -20px;
+    margin-left: 55px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 #allinputs {
     display: flex;
     /* margin-left: 50px; */
@@ -21,20 +28,25 @@ h1 {
 
 #imgcontainer {
     display: flex;
+    /* flex: 1 1 1 1 */
     flex-direction: row;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    margin-top: 30px;
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-top: 60px;
 }
 
 .card {
     /* border: red 2px solid; */
     border-radius: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    margin-right: 10px;
     width: 300px;
     height: 300px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    cursor: pointer;
 }
 
 img {
